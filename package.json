@@ -1,0 +1,23 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "Landing Page for Natours",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass sass/main.scss css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobicaCodeaza/Natours-Project.git"
+  },
+  "keywords": [],
+  "author": "Stoica",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RobicaCodeaza/Natours-Project/issues"
+  },
+  "homepage": "https://github.com/RobicaCodeaza/Natours-Project#readme",
+  "devDependencies": {
+    "sass": "^1.55.0"
+  }
+}
