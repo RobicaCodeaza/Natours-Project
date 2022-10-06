@@ -1,42 +1,31 @@
 {
-  "name": "natours",
-  "version": "1.0.0",
-  "description": "Landing Page for Natours",
-  "main": "index.js",
+  "name": "project",
+  "version": "0.1.0",
+  "description": "SASS compile|autoprefix|minimize and live-reload dev server using Browsersync for static HTML",
+  "main": "public/index.html",
+  "author": "5t3ph",
   "scripts": {
-    "compile:sass": "sass sass/main.scss css/style.css -w"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/RobicaCodeaza/Natours-Project.git"
-  },
-  "keywords": [],
-  "author": "Stoica",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/RobicaCodeaza/Natours-Project/issues"
-  },
-  "homepage": "https://github.com/RobicaCodeaza/Natours-Project#readme",
-  "devDependencies": {
-    "sass": "^1.55.0"
+    "build:sass": "sass  --no-source-map src/sass:public/css",
+    "copy:html": "copyfiles -u 1 ./src/*.html public",
+    "copy:assets": "copyfiles -u 1 ./src/assets/**/* public",
+    "copy": "npm-run-all --parallel copy:*",
+    "watch:html": "onchange \"src/*.html\" -- npm run copy:html",
+    "watch:assets": "onchange \"/src/assets/**/*\" -- npm run copy:assets",
+    "watch:sass": "sass  --no-source-map --watch src/sass:public/css",
+    "watch": "npm-run-all --parallel watch:*",
+    "serve": "browser-sync start --server public --files public",
+    "start": "npm-run-all copy --parallel watch serve",
+    "build": "npm-run-all copy:html build:*",
+    "postbuild": "postcss public/css/*.css -u autoprefixer cssnano -r --no-map"
   },
   "dependencies": {
-    "anymatch": "^3.1.2",
-    "binary-extensions": "^2.2.0",
-    "braces": "^3.0.2",
-    "chokidar": "^3.5.3",
-    "fill-range": "^7.0.1",
-    "glob-parent": "^5.1.2",
-    "immutable": "^4.1.0",
-    "is-binary-path": "^2.1.0",
-    "is-extglob": "^2.1.1",
-    "is-glob": "^4.0.3",
-    "is-number": "^7.0.0",
-    "jquery": "^3.6.1",
-    "normalize-path": "^3.0.0",
-    "picomatch": "^2.3.1",
-    "readdirp": "^3.6.0",
-    "source-map-js": "^1.0.2",
-    "to-regex-range": "^5.0.1"
+    "autoprefixer": "^10.4.2",
+    "browser-sync": "^2.27.7",
+    "copyfiles": "^2.4.1",
+    "cssnano": "^5.0.17",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "postcss-cli": "^9.1.0",
+    "sass": "^1.49.8"
   }
 }
