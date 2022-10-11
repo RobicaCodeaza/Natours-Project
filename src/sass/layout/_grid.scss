@@ -2,9 +2,15 @@
 
 .row {
   max-width: $grid-width;
-  background-color: #eee;
   margin: 0 auto;
+  display: flex;
   &:not(:last-child) {
     margin-bottom: $gutter-vertical;
+  }
+  [class^="col-"] {
+    &:not(:last-child) {
+      margin-right: $gutter-horizontal;
+    }
+    flex: 1;
   }
 }
