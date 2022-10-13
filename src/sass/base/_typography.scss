@@ -3,7 +3,7 @@
 body {
   font-family: "Heebo", sans-serif;
   font-weight: 400;
-  font-size: 1.6rem;
+  font-size: $default-font-size;
   line-height: 1.7;
   color: #888;
   padding: 3rem;
@@ -60,4 +60,13 @@ body {
   }
 }
 .heading-tertiary {
+  font-size: $default-font-size;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.paragraph {
+  font-size: $default-font-size;
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
 }
