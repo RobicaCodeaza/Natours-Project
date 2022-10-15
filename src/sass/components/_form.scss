@@ -71,7 +71,6 @@
     position: absolute;
     left: 0;
     top: -0.2rem;
-    border-radius: 50%;
     display: inline-block;
     height: 2.5rem;
     width: 2.5rem;
@@ -93,6 +92,7 @@
       transition: opacity 0.2s;
     }
   }
+
   &__radio-input:checked + &__radio-label &__radio-button::after {
     opacity: 1;
   }
