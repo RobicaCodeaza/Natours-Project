@@ -6,11 +6,27 @@
   display: flex;
   &:not(:last-child) {
     margin-bottom: $gutter-vertical;
+    @include respond(tab-port) {
+      margin-bottom: $gutter-vertical-small;
+    }
   }
   [class^="col-"] {
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
+      @include respond(tab-port) {
+        margin-right: 0;
+        margin-bottom: $gutter-vertical-small;
+      }
     }
-    flex: 1;
+    flex: 1 0 0;
+
+    @include respond(tab-port) {
+      flex: 0 0 100%;
+    }
+  }
+  @include respond(tab-port) {
+    flex-wrap: wrap;
+    max-width: 50rem;
+    padding: 0 3rem;
   }
 }
