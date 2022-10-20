@@ -23,8 +23,14 @@
     );
     -webkit-background-clip: text;
     color: transparent;
+    @include respond(tab-port) {
+      margin-bottom: 0.1rem;
+    }
   }
 
   &__text {
+  }
+  @include respond(tab-port) {
+    padding: 2rem;
   }
 }

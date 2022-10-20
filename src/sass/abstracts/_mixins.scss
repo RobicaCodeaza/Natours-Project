@@ -54,6 +54,11 @@
       @content;
     }
   }
+  @if $breakpoint == particular-small-laptop {
+    @media (max-width: 98.5em) {
+      @content;
+    }
+  }
 }
 
 // Base + Typography
