@@ -15,6 +15,10 @@
 
   transition: all 0.5s;
 
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: rgba(#000, 0.55);
+
   &:target {
     opacity: 1;
     visibility: visible;
@@ -145,5 +149,11 @@
       transform: scale(1.025) translateY(-0.1rem);
       box-shadow: 0 1.5rem 3rem rgba(#000, 0.225);
     }
+  }
+  @supports (-webkit-backdrop-filter: blur(10px)) or
+    (backdrop-filter: blur(10px)) {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(#000, 0.55);
   }
 }

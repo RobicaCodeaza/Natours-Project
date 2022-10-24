@@ -1,4 +1,4 @@
-@use "../abstracts/mixins" as *;
+@use "../abstracts" as *;
 
 *,
 *::after,
@@ -24,4 +24,9 @@ html {
 
 body {
   box-sizing: border-box;
+}
+
+::selection {
+  background-color: $color-primary-light;
+  color: $color-white;
 }
